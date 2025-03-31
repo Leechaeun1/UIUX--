@@ -1,0 +1,62 @@
+.flex-container {
+  width: 300px;
+  height: 200px;
+  background-color: #c4c4c4;
+  border: 1px solid black;
+  /* 내부 요소가 유연하게 설정할 수 있는 상태가 됨 */
+  /* 이때 요소들의 초깃값 : 요소가 가질 수 있는 최솟값 */
+  display: flex;
+  /* flex-direction: row; -> 축의 방향을 수평방향으로 설정 */
+  /* flex-direction: row-reverse; -> 주축의 방향을 뒤집음(왼 -> 오에서 오 -> 왼으로) */
+  /* flex-direction: column; -> 주축의 방향이 세로 */
+  /* flex-direction: column-reverse;-> 주축의 방향이 뒤집어짐(위 -> 아래에서 아래 -> 위로) */
+  /* flex-direction: row; */
+  /* flex-wrap: wrap; -> 요소가 많을 시 flex-item들을 자동 줄바꿈 결정 */
+  /* flex-wrap: wrap-reverse; -> 거꾸로 배치*/
+  /* flex-wrap: wrap; */
+
+  /* flex-flow = flex-direction(필수) + flex-wrap */
+  /* flex-flow: row wrap; */
+
+  /* 주축 방향으로 정렬 */
+  /* justify-content: center; -> 중앙정렬 */
+  /* justify-content: start; -> 기본값, 왼쪽부터 정렬 */
+  /* justify-content: end; -> 오른쪽부터 정렬 */
+  /* justify-content: space-between; -> 첫, 마지막 요소 양 끝에 배치 후 나머지 균등분배 */
+  /* justify-content: space-around; -> 첫, 마지막 요소 끝에 공백(item을 기준으로 균등분배) */
+  /* justify-content: space-evenly; -> 여백을 기준으로 균등하게 */
+  /* justify-content: space-evenly; */
+
+  /* 교차축 방향으로 정렬 */
+  /* align-items: stretch; -> 기본값, flex-container의 높이만큼 요소를 늘리겠다, 
+  item에 높이가 지정되어있을 경우 적용xxxx!!!! */
+  /* align-items: start; -> 교차축 맨위 배치 */
+  /* align-items: end; -> 교차축에서 끝으로 배치 */
+  /* align-items: center; -> 교차축의 중앙배치 */
+  /* align-items: center; */
+
+  /* align-content: center; -> 요소가 많아졌을 때 요소 붙이기 */
+  /* align-content: center; */
+}
+.flex-item {
+  /* 넓이 지정 되어있어도 부모요소 넓이에 맞게 요소들이 자동으로 줄어든다 */
+  width: 50px;
+  /* height: 50px; */
+  color: white;
+  background-color: #ff5252;
+  /* flex-shrink: 0; -> 부모 넓이보다 아이템 넓이 크기의 합이 크더라도 크기 유지 가능 */
+  /* flex-shrink: 0; */
+}
+.item1 {
+  flex-grow: 2;
+}
+.item2 {
+  /* flex-grow: 1; -> 아이템이 부모 넓이에 비해 적을 경우 */
+  flex-grow: 1;
+}
+.item3 {
+  flex-grow: 2;
+}
+.flex-item:nth-child(2n) {
+  background-color: #bf5e5e;
+}
