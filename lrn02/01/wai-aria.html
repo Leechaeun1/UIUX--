@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- role : 실제 버튼x, 버튼스타일의 div 사용해야 할 때 
+     role에 button을 지정해 올바른 방향 제시(alert, tab ..도 마찬가지) -->
+    <div id="custom-button" role="button">확인</div>
+    <style>
+      #custom-button {
+        display: inline-block;
+        background-color: blueviolet;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 10px;
+        cursor: pointer;
+      }
+    </style>
+
+    <!-- aria-label : 이모지 등을 사용한 버튼은 스크린리더기가 어떤 버튼인지 명확하게 알 수 없다,
+     이때 aria-label을 사용해 버튼 정보 전달 
+    (버튼인지는 알지만, 완료 버튼인지 취소버튼인지 등 이모지를 읽을 수 없음) -->
+    <button aria-label="확인">🖤</button>
+
+    <h2 id="form-title">회원 가입 양식</h2>
+    <p>로그인으로 서비스를 모두 이용하세요</p>
+    <!-- aria-labelledby : 
+     ..5줄 정도의 내용이 있을 때 스크린리더기을 사용하면 이해의 어려움이 존재.
+     따라서 id의 값에 form-title 과 같은 유니크한 id값을 준 후, 
+     aria-labelledby로 참조 관계를 형성한다
+     (키워드 : 대체텍스트 제공 역할, 다른 요소와 참조 관계 형성) -->
+    <form aria-labelledby="form-title">
+      <label for="">이메일 : <input type="email" /></label>
+    </form>
+
+    <!-- aria-hidden : 스크린리더기가 굳이 읽어줄 필요 없는 요소를 무시하도록 함 -->
+    <span aria-hidden="true">⭐</span>
+    <span>즐겨찾기</span>
+
+    <!-- aria-expanded : 메뉴처럼 접었다 펼치기 기능이 있을 경우
+     aria-expanded를 사용해 확장이 가능한 요소(true)인지, 확장이 불가능한 요소(false)인지 알려줌 -->
+    <button aria-expanded="true">메뉴</button>
+    <div id-menu>
+      <ul>
+        <li>홈</li>
+        <li>서비스</li>
+      </ul>
+    </div>
+
+    <!-- aria-selected : 
+     스크린 리더기에게 탭이 활성화(true), 탭이 비활성화(false)된 정보를 각각 알려줌 -->
+    <div class="tablist">
+      <button role="tab" aria-selected="true">탭1</button>
+      <button role="tab" aria-selected="false">탭2</button>
+    </div>
+
+    <!-- aria-describedby : 
+     설명이 시각적으로 감춰져있을 때 부가적으로 의미 전달 가능 -->
+    <button aria-describedby="desc">삭제</button>
+    <p id="desc" hidden>이 버튼을 누르면 항목이 영구적으로 삭제됩니다.</p>
+  </body>
+</html>

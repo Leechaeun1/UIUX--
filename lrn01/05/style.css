@@ -54,7 +54,7 @@ header h1 {
 }
 
 .btn-outline {
-  background-color: none;
+  background: none;
   border: 2px solid #ff8db5;
   color: #ff8db5;
   padding: 0.5rem 1rem;
